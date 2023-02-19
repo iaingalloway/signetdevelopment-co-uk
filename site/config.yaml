@@ -1,8 +1,7 @@
-baseURL: https://example.com
-languageCode: en-us
-title: Vanilla
+baseURL: https://signetdevelopment.co.uk
+languageCode: en-gb
+title: Signet Development
 theme: vanilla-bootstrap-hugo-theme
-googleAnalytics: UA-123456789-1
 
 taxonomies:
   tag: tags
@@ -14,33 +13,25 @@ permalinks:
 # The value of pre is the icon name
 menu:
   nav:
-  - name: Home
-    pre: home
-    url: /
+  - name: Email
+    pre: at-sign
+    url: mailto:iain@signetdevelopment.co.uk
     weight: 1
-  - name: Blog
-    pre: edit
-    url: /post/
+  - name: GitHub
+    pre: github
+    url: https://github.com/iaingalloway
     weight: 2
-  - name: Tags
-    pre: tag
-    url: /tags/
+  - name: LinkedIn
+    pre: linkedin
+    url: https://www.linkedin.com/in/iaingalloway/
     weight: 3
-  - name: About
-    pre: smile
-    url: /about/
-    weight: 4
-  - name: RSS
-    pre: rss
-    url: /index.xml
-    weight: 5
 
 params:
   includeBootstrapJs: false
   showActiveNav: true
   containerMaxWidth: 700px
-  dateFormat: Jan 2, 2006
-  homeText: Welcome to the Vanilla theme demo. Have a look around. Maybe even eat some ice cream.
+  dateFormat: 2006-01-02
+  homeText: A UK-based software consultancy.
   footerText: Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)
   hideFooter: false
   katex: true
