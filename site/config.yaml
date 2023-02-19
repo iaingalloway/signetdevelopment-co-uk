@@ -29,7 +29,7 @@ menu:
 params:
   includeBootstrapJs: false
   showActiveNav: true
-  containerMaxWidth: 700px
+  containerMaxWidth: 1200px
   dateFormat: 2006-01-02
   homeText: A UK-based software consultancy.
   footerText: Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)
