@@ -1,0 +1,43 @@
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: homepage
+        label: Homepage
+        file: site/content/_index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Eyebrow, name: eyebrow, widget: string }
+          - { label: Body, name: body, widget: markdown }
+      - name: expertise
+        label: Expertise
+        file: site/content/expertise/_index.md
+        fields: &page_fields
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Body, name: body, widget: markdown }
+      - name: work
+        label: Work
+        file: site/content/work/_index.md
+        fields: *page_fields
+      - name: approach
+        label: Approach
+        file: site/content/approach.md
+        fields: *page_fields
+      - name: insights_index
+        label: Insights
+        file: site/content/insights/_index.md
+        fields: *page_fields
+      - name: about
+        label: About
+        file: site/content/about.md
+        fields: *page_fields
+      - name: contact
+        label: Contact
+        file: site/content/contact.md
+        fields: *page_fields
+      - name: privacy
+        label: Privacy
+        file: site/content/privacy.md
+        fields: *page_fields

@@ -1,0 +1,86 @@
+csp:
+  directives:
+    - name: default-src
+      sources:
+        - "'self'"
+    - name: img-src
+      sources:
+        - "'self'"
+        - "data:"
+      admin_sources:
+        - "'self'"
+        - "data:"
+        - "blob:"
+        - "https:"
+    - name: style-src
+      sources:
+        - "'self'"
+      admin_sources:
+        - "'self'"
+        - "'unsafe-inline'"
+        - "https://fonts.googleapis.com"
+    - name: font-src
+      sources:
+        - "'self'"
+        - "data:"
+      admin_sources:
+        - "'self'"
+        - "data:"
+        - "https://cdn.jsdelivr.net"
+        - "https://fonts.gstatic.com"
+    - name: script-src
+      sources:
+        - "'self'"
+      admin_sources:
+        - "'self'"
+        - "'unsafe-inline'"
+        - "https://*.cloudflare.com"
+        - "https://unpkg.com"
+    - name: connect-src
+      sources:
+        - "'self'"
+      admin_sources:
+        - "'self'"
+        - "blob:"
+        - "data:"
+        - "https://*.cloudflare.com"
+        - "https://api.github.com"
+        - "https://github.com"
+        - "https://unpkg.com"
+    - name: media-src
+      sources:
+        - "'none'"
+      admin_sources:
+        - "'self'"
+        - "blob:"
+    - name: frame-src
+      sources:
+        - "'none'"
+      admin_sources:
+        - "blob:"
+    - name: manifest-src
+      sources:
+        - "'none'"
+      admin_sources:
+        - "'self'"
+        - "blob:"
+    - name: base-uri
+      sources:
+        - "'self'"
+    - name: form-action
+      sources:
+        - "'self'"
+      admin_sources:
+        - "'self'"
+        - "https://github.com"
+    - name: frame-ancestors
+      sources:
+        - "'none'"
+
+headers:
+  - path: "/*"
+    values:
+      Referrer-Policy: strict-origin-when-cross-origin
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: DENY
+      Permissions-Policy: camera=(), geolocation=(), microphone=()

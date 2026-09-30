@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <article>
+    <header>
+      <p><small>{{ .Params.eyebrow | default (.Section | default "Signet Development" | humanize) }}</small></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

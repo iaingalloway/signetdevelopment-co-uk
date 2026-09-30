@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Signet Development content manager</title>
+  <link href="/admin/config.yaml" type="text/yaml" rel="cms-config-url">
+  <link href="/admin/pages.yaml" type="text/yaml" rel="cms-config-url">
+  <link href="/admin/cases.yaml" type="text/yaml" rel="cms-config-url">
+  <link href="/admin/insights.yaml" type="text/yaml" rel="cms-config-url">
+</head>
+<body>
+  <script src="https://unpkg.com/@sveltia/cms@0.193.2/dist/sveltia-cms.js"></script>
+  <script>
+    CMS.registerPreviewStyle('/css/main.css');
+
+    function pagePreview(label) {
+      return createClass({
+        render: function() {
+          var entry = this.props.entry;
+          var eyebrow = label || entry.getIn(['data', 'eyebrow']);
+
+          return h('article', {},
+            h('header', {},
+              h('p', {}, h('small', {}, eyebrow)),
+              h('h1', {}, entry.getIn(['data', 'title'])),
+              h('p', {}, entry.getIn(['data', 'description']))
+            ),
+            h('div', {}, this.props.widgetFor('body'))
+          );
+        }
+      });
+    }
+
+    var CasePreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var services = entry.getIn(['data', 'services']) || [];
+
+        if (typeof services.toJS === 'function') {
+          services = services.toJS();
+        }
+
+        return h('article', {},
+          h('header', {},
+            h('p', {}, h('small', {}, 'Case study')),
+            h('h1', {}, entry.getIn(['data', 'title'])),
+            h('p', {}, entry.getIn(['data', 'description'])),
+            h('dl', {},
+              h('div', {}, h('dt', {}, 'Sector'), h('dd', {}, entry.getIn(['data', 'sector']))),
+              h('div', {}, h('dt', {}, 'Period'), h('dd', {}, entry.getIn(['data', 'period']))),
+              h('div', {}, h('dt', {}, 'Services'), h('dd', {}, services.join(', ')))
+            )
+          ),
+          h('div', {}, this.props.widgetFor('body'))
+        );
+      }
+    });
+
+    var InsightPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+
+        return h('article', {},
+          h('header', {},
+            h('p', {}, h('small', {}, 'Insight')),
+            h('h1', {}, entry.getIn(['data', 'title'])),
+            h('p', {}, entry.getIn(['data', 'description'])),
+            h('time', {}, entry.getIn(['data', 'date']))
+          ),
+          h('div', {}, this.props.widgetFor('body'))
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate('homepage', pagePreview());
+    CMS.registerPreviewTemplate('expertise', pagePreview('Expertise'));
+    CMS.registerPreviewTemplate('work', pagePreview('Work'));
+    CMS.registerPreviewTemplate('approach', pagePreview('Signet Development'));
+    CMS.registerPreviewTemplate('insights_index', pagePreview('Insights'));
+    CMS.registerPreviewTemplate('about', pagePreview('Signet Development'));
+    CMS.registerPreviewTemplate('contact', pagePreview('Signet Development'));
+    CMS.registerPreviewTemplate('privacy', pagePreview('Signet Development'));
+    CMS.registerPreviewTemplate('cases', CasePreview);
+    CMS.registerPreviewTemplate('insights', InsightPreview);
+  </script>
+</body>
+</html>

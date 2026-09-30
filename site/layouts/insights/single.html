@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <article>
+    <header>
+      <p><small>Insight</small></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2 January 2006" }}</time>{{ end }}
+    </header>
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

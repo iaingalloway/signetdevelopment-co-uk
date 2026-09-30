@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <section>
+    <header>
+      <p><small>{{ .Section | humanize }}</small></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <div>
+      {{ .Content }}
+      {{ with .Pages }}
+        <section aria-label="{{ $.Title }}">
+          <ol>
+            {{ range . }}
+              <li>
+                <article>
+                  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+                </article>
+              </li>
+            {{ end }}
+          </ol>
+        </section>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
