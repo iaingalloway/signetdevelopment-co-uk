@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../fonts/open-sans/open-sans-latin-400-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #202522;
+  background: #f8f8f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #174f45;
+}
+
+a:focus-visible {
+  outline: 3px solid #d19b2a;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  background: #202522;
+  color: #fff;
+  transform: translateY(-110%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+body > header,
+body > footer,
+main > article > header,
+main > article > div,
+main > section > header,
+main > section > div {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-block: 1.5rem;
+}
+
+body > header > a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body > header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body > header nav {
+  font-weight: 600;
+}
+
+body > header nav a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+body > header nav a[aria-current="page"] {
+  font-weight: 700;
+}
+
+main > article > header,
+main > article > div,
+main > section > header,
+main > section > div {
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+main > article > header > *,
+main > article > div > *,
+main > section > header > *,
+main > section > div > * {
+  max-width: 68ch;
+}
+
+main > article > header,
+main > section > header {
+  border-block: 1px solid #c9cbc6;
+}
+
+main > article > header h1,
+main > section > header h1 {
+  max-width: 18ch;
+  margin-block: 0.25rem 1rem;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+}
+
+main > article > header small,
+main > section > header small {
+  margin: 0;
+  color: #3e625a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+main > article > header h1 + p,
+main > section > header h1 + p {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid #c9cbc6;
+  font-size: 0.875rem;
+}
+
+body > footer p {
+  margin: 0;
+}
+
+main > section > div > section > ol {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+main > section > div > section > ol article {
+  padding-block: 1.5rem;
+  border-top: 1px solid #c9cbc6;
+}
+
+main > section > div > section > ol h2 {
+  margin-top: 0;
+}
+
+main > section > div > section article > header > p {
+  margin-bottom: 0.25rem;
+  color: #3e625a;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+main > article > header > dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+main > article > header > dl div {
+  padding-top: 0.75rem;
+  border-top: 1px solid #c9cbc6;
+}
+
+main > article > header > dl dt {
+  font-weight: 600;
+}
+
+main > article > header > dl dd {
+  margin: 0.25rem 0 0;
+}
+
+@media print {
+  .skip-link,
+  body > header nav,
+  body > footer nav {
+    display: none;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: inherit;
+  }
+}

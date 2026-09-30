@@ -1,0 +1,52 @@
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: site/content
+    path: "{{slug}}/_index"
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    index_file:
+      label: Homepage
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Exclude from build
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+        hint: Excludes this page and its menu entry from Hugo builds independently of Sveltia's editorial workflow.
+      - label: Primary navigation
+        name: menus
+        widget: object
+        required: false
+        hint: Enable to include this page in the primary navigation.
+        fields:
+          - label: Main menu
+            name: main
+            widget: object
+            fields:
+              - label: Menu label
+                name: name
+                widget: string
+              - label: Menu weight
+                name: weight
+                widget: number
+                value_type: int
+                min: 1
+                hint: Lower numbers come first.
+      - label: Body
+        name: body
+        widget: markdown

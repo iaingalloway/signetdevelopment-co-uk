@@ -1,26 +1,27 @@
 ---
-title:
-draft: false
+title: Untangle your software delivery
+eyebrow: Founder-led software consultancy
+description: Technical leadership, digital transformation and delivery governance for organisations building or changing critical systems.
 ---
 
-<h1>Signet development</h1>
-A UK-based software consultancy.
+Signet Development was founded by Iain Galloway in 2011 to help organisations build and change critical software with reliable and transparent processes.
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; column-gap:2em; padding-top:4em; padding-bottom: 4em">
-  <div style="width: 320px;">
-    <h3>Software development</h3>
-    I craft custom software tailored to your business needs, driving efficiency and innovation. Whether it's building new systems from the ground up or adapting existing systems to evolving challenges, I'm committed to your success.
-  </div>
+## One practice for critical change
 
-  <div style="width: 320px;">
-    <h3>Agile team leadership</h3>
-    I have extensive experience building and leading agile software development teams. By emphasizing collaboration, iterative development, and continuous feedback, I can help your team deliver high-quality software solutions on time and within budget.
-  </div>
+Technical leadership sets direction and brings stakeholders together around important decisions. Digital transformation protects operations while modernising or replacing critical systems. Delivery governance enables change that is prompt and accountable.
 
-  <div style="width: 320px;">
-    <h3>Digital transformation</h3>
-    I can help your business navigate the ever-changing landscape of digital technology. Whether you need to modernize legacy systems, implement new solutions, or optimize existing processes, I can provide the expertise and guidance you need to succeed.
-  </div>
-</div>
+[Discover the expertise that Signet Development brings to your projects](/expertise/)
 
-I have been helping businesses achieve their objectives through innovative and effective software solutions since 2003. <a href="iain@signetdevelopment.co.uk">Contact me</a> to learn more about how I can help your business thrive in the digital age.
+## From intent to outcome
+
+Iain builds relationships, processes, and systems to engage stakeholders throughout delivery to keep the intended outcome clear and decisions well-aligned. Rationale, progress, and operational results are continuously made visible as the work evolves. That visibility equips teams to use feedback and evidence to steer delivery and address divergence early.
+
+[Learn about Signet Development's approach to delivery](/approach/)
+
+## Experience grounded in delivery
+
+Iain has led software teams and technical delivery across diverse sectors including logistics, energy, retail, and financial services. His work includes coaching and mentoring; software and solution architecture; change management; and continuous integration/continuous delivery - supporting the development of people, processes, and systems to deliver effective and sustainable change.
+
+[Explore selected work that Signet Development has delivered](/work/)
+
+For future engagements or relevant collaborations, [contact Iain](/contact/).

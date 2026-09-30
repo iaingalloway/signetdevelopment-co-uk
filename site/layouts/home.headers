@@ -1,0 +1,9 @@
+{{- $global := index (where hugo.Data.netlify.headers.headers "path" "/*") 0 -}}
+/*
+	Content-Security-Policy: {{ range $index, $directive := hugo.Data.netlify.headers.csp.directives }}{{ if $index }}; {{ end }}{{ $directive.name }} {{ delimit $directive.sources " " }}{{ end }}
+{{- range $name, $value := $global.values }}
+	{{ $name }}: {{ $value }}
+{{- end }}
+
+/admin/*
+	Content-Security-Policy: {{ range $index, $directive := hugo.Data.netlify.headers.csp.directives }}{{ if $index }}; {{ end }}{{ $directive.name }} {{ with $directive.admin_sources }}{{ delimit . " " }}{{ else }}{{ delimit $directive.sources " " }}{{ end }}{{ end }}

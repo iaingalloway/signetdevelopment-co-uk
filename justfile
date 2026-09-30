@@ -6,7 +6,7 @@ dev:
 check: build
 
 build:
-    cd site && HUGO_ENV=production hugo --gc --minify --panicOnWarning --printPathWarnings -b https://iaingalloway.com
+    cd site && HUGO_ENV=production hugo --gc --minify --panicOnWarning --printPathWarnings -b https://signetdevelopment.co.uk
 
 publish:
     cd site && HUGO_ENV=production hugo --gc --minify

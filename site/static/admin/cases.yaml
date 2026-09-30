@@ -1,0 +1,47 @@
+collections:
+  - name: cases
+    label: Case studies
+    label_singular: Case study
+    folder: site/content/work
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    filter:
+      field: content-type
+      value: case-study
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: description
+        widget: text
+      - label: Content type
+        name: content-type
+        widget: hidden
+        default: case-study
+      - label: Sector
+        name: sector
+        widget: string
+      - label: Period
+        name: period
+        widget: string
+      - label: Services
+        name: services
+        widget: list
+        field:
+          label: Service
+          name: service
+          widget: string
+      - label: Key technologies
+        name: technologies
+        widget: list
+        required: false
+        field:
+          label: Technology
+          name: technology
+          widget: string
+      - label: Body
+        name: body
+        widget: markdown
