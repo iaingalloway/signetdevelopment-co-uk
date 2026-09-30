@@ -1,5 +1,5 @@
 baseURL: https://signetdevelopment.co.uk
-languageCode: en-gb
+locale: en-gb
 title: Signet Development
 theme: vanilla-bootstrap-hugo-theme
 
