@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ $description := .Description | default .Site.Params.description }}
+  <meta name="description" content="{{ $description }}">
+  <meta name="robots" content="index, follow">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta property="og:type" content="{{ if eq .Section "insights" }}article{{ else }}website{{ end }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{ $font := resources.Get "fonts/open-sans/open-sans-latin-400-700.woff2" }}
+  <link rel="preload" href="{{ $font.RelPermalink }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := resources.Get "css/main.css" }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+    <nav aria-label="Primary navigation">
+      <ul>
+        {{ range .Site.Menus.main }}
+          <li>
+            {{ $href := .URL | relURL }}
+            {{ with .Page }}{{ $href = .RelPermalink }}{{ end }}
+            <a href="{{ $href }}"{{ if or ($.IsMenuCurrent .Menu .) ($.HasMenuCurrent .Menu .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <p>Signet Development Limited. Registered in Scotland, SC396992.</p>
+    <nav aria-label="Footer navigation">
+      <a href="{{ "privacy/" | relURL }}">Privacy</a>
+    </nav>
+  </footer>
+</body>
+</html>

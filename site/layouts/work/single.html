@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <article>
+    <header>
+      <p><small>Case study</small></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      <dl>
+        {{ with .Params.sector }}<div><dt>Sector</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.period }}<div><dt>Period</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.services }}<div><dt>Services</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+      </dl>
+    </header>
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

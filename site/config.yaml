@@ -1,40 +1,52 @@
 baseURL: https://signetdevelopment.co.uk
 locale: en-gb
 title: Signet Development
-theme: vanilla-bootstrap-hugo-theme
+disableKinds:
+  - taxonomy
+  - term
+  - RSS
 
-taxonomies:
-  tag: tags
+mediaTypes:
+  text/netlify-headers:
+    suffixes:
+      - ""
 
-permalinks:
-  post: /:filename/
+outputFormats:
+  headers:
+    baseName: _headers
+    isPlainText: true
+    mediaType: text/netlify-headers
+    notAlternative: true
+    root: true
 
-# See https://feathericons.com/
-# The value of pre is the icon name
+outputs:
+  home:
+    - html
+    - headers
+
 menu:
-  nav:
-  - name: Email
-    pre: at-sign
-    url: mailto:iain@signetdevelopment.co.uk
-    weight: 1
-  - name: GitHub
-    pre: github
-    url: https://github.com/iaingalloway
-    weight: 2
-  - name: LinkedIn
-    pre: linkedin
-    url: https://www.linkedin.com/in/iaingalloway/
-    weight: 3
+  main:
+    - name: Expertise
+      pageRef: /expertise
+      weight: 10
+    - name: Work
+      pageRef: /work
+      weight: 20
+    - name: Approach
+      pageRef: /approach
+      weight: 30
+    - name: Insights
+      pageRef: /insights
+      weight: 40
+    - name: About
+      pageRef: /about
+      weight: 50
+    - name: Contact
+      pageRef: /contact
+      weight: 60
 
 params:
-  includeBootstrapJs: false
-  showActiveNav: true
-  containerMaxWidth: 1200px
-  dateFormat: 2006-01-02
-  homeText: A UK-based software consultancy.
-  footerText: Made with [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme)
-  hideFooter: false
-  katex: true
+  description: Technical leadership, digital transformation and delivery governance.
 
 markup:
   defaultMarkdownHandler: goldmark
@@ -54,15 +66,3 @@ markup:
       hardWraps: false
       unsafe: true
       xHTML: false
-  highlight:
-    codeFences: true
-    hl_Lines: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
-    noClasses: true
-    style: monokai
-    tabWidth: 4
-  tableOfContents:
-    endLevel: 6
-    startLevel: 2

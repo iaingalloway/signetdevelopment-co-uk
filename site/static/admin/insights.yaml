@@ -1,0 +1,18 @@
+collections:
+  - name: insights
+    label: Insights
+    label_singular: Insight
+    folder: site/content/insights
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    filter:
+      field: content_type
+      value: insight
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Description, name: description, widget: text }
+      - { label: Content type, name: content_type, widget: hidden, default: insight }
+      - { label: Body, name: body, widget: markdown }

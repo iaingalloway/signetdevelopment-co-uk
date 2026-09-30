@@ -1,0 +1,32 @@
+collections:
+  - name: cases
+    label: Case studies
+    label_singular: Case study
+    folder: site/content/work
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    filter:
+      field: content_type
+      value: case-study
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Content type, name: content_type, widget: hidden, default: case-study }
+      - { label: Sector, name: sector, widget: string }
+      - { label: Period, name: period, widget: string }
+      - label: Services
+        name: services
+        widget: list
+        field: { label: Service, name: service, widget: string }
+      - label: Evidence status
+        name: evidence_status
+        widget: select
+        options:
+          - review-required
+          - verified-anonymised
+          - permission-required
+          - publishable
+        default: review-required
+      - { label: Body, name: body, widget: markdown }

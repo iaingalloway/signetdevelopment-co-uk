@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <section>
+    <header>
+      <p><small>Insights</small></p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </header>
+    <div>
+      {{ .Content }}
+      {{ with .Pages.ByDate.Reverse }}
+        <section aria-label="Published insights">
+          <ol>
+            {{ range . }}
+              <li>
+                <article>
+                  <header>
+                    <p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+                    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                  </header>
+                  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+                </article>
+              </li>
+            {{ end }}
+          </ol>
+        </section>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
