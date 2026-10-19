@@ -1,7 +1,7 @@
 ---
 title: Untangle your software delivery
 eyebrow: Founder-led software consultancy
-description: Technical leadership, digital transformation and delivery governance for organisations building or changing critical systems.
+description: Technical leadership, digital transformation, and delivery governance for organisations building and changing critical software systems.
 ---
 
 Signet Development was founded by Iain Galloway in 2011 to help organisations build and change critical software with reliable and transparent processes.

@@ -25,7 +25,7 @@ outputs:
     - headers
 
 params:
-  description: Technical leadership, digital transformation and delivery governance.
+  description: Technical leadership, digital transformation, and delivery governance for organisations building and changing critical software systems.
 
 markup:
   defaultMarkdownHandler: goldmark
