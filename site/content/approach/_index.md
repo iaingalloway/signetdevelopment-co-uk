@@ -24,17 +24,15 @@ Their involvement should be part of delivery, not a separate conversation that e
 
 ## Automate the repetitive work
 
-People should spend their time on decisions, not copying approved data or working through manual release instructions.
+People should spend their time adding value, not manually assembling context from across systems or performing repetitive tasks.
 
-Automated checks and deployment reduce opportunities for mistakes and keep what happens in the system close to what was reviewed. A record of the change, checks and approvals makes it possible to see what was intended and what was applied.
-
-For the energy project, replacing manual release steps meant the system no longer had to be taken offline for changes.
+Sources of truth keep information consistent and reliable across systems. Automated builds, tests, and deploys reduce opportunities for mistakes and keep what happens in the system close to what was reviewed. Records of changes, checks, and approvals make it possible to see what happened and what was intended.
 
 ## Check the result and plan for faults
 
 A successful deployment is not the same as a successful change. Monitoring and feedback from the people using the service show whether it is working as intended.
 
-The design also needs to account for failed changes and faults: how the service will keep running, how a problem will be found and how it can be recovered. That work belongs in the delivery plan, not after an outage.
+The design also needs to account for failed changes and faults: how the service will keep running, how a problem will be found and how it can be resolved. That work belongs in the delivery plan, not after an outage.
 
 ## Leave the team able to run it
 
