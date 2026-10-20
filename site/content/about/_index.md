@@ -12,4 +12,4 @@ Founder Iain Galloway has built systems for diverse clients since 2003. He has l
 
 Signet Development can recommend or engage independent specialists, or collaborate with an established client team.
 
-Selected case studies describe Iain's role and delivery outcomes in more detail. [Explore selected work](/work/).
+[Contact Signet Development to discuss your project](/contact/).

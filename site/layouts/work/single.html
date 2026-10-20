@@ -13,6 +13,15 @@
     </header>
     <div>
       {{ .Content }}
+      {{ $next := site.GetPage "/about" }}
+      {{ $nextLabel := "Learn more about Signet Development" }}
+      {{ with .Parent.Pages.Prev . }}
+        {{ $next = . }}
+        {{ $nextLabel = printf "Read the next case study: %s" .Title }}
+      {{ end }}
+      <nav aria-label="Continue reading">
+        <p><a href="{{ $next.RelPermalink }}">{{ $nextLabel }}</a></p>
+      </nav>
     </div>
   </article>
 {{ end }}
